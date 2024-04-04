@@ -35,6 +35,6 @@ jobs:
 
       - name: Execute withings-sync
         env: 
-          withings_code: ${{ secrets.withingsCode }}
+          withings_code: ${{ secrets.WITHINGSCODE }}
         run: withings-sync -f 2024-04-01 -v
     
