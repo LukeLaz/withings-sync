@@ -16,6 +16,9 @@ jobs:
         with:
           python-version: "3.10"
 
+      - name: ls 
+        run: ls -il    
+
       - name: execute py script # run main.py
         run: python sync.py -f 2024-04-01 -v
     
