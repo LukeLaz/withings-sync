@@ -30,9 +30,9 @@ jobs:
           --sdist
           --outdir dist/ .
 
-      - name: ls 
-        run: cd dist && ls -il && pip install withings-sync-4.2.4.tar.gz
+      - name: Install withings-sync
+        run: cd dist && pip install withings-sync-4.2.4.tar.gz
 
-      # - name: execute py script # run main.py
-        # run: cd withings_sync && python -m sync.py -f 2024-04-01 -v
+      - name: Execute withings-sync
+        run: withings-sync -f 2024-04-01 -v
     
