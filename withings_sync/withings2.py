@@ -115,7 +115,7 @@ class WithingsOAuth2:
         log.info(url)
         log.info("")
 
-        authentification_code = input("Token : ")
+        authentification_code = os.getenv("withings_code", "")
 
         return authentification_code
 
