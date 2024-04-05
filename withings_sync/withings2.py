@@ -128,12 +128,13 @@ class WithingsOAuth2:
             "grant_type": "authorization_code",
             "client_id": self.app_config["client_id"],
             "client_secret": self.app_config["consumer_secret"],
-            "code": self.user_config["authentification_code"],
+            "code": os.getenv("withings_code", ""),
             "redirect_uri": self.app_config["callback_url"],
         }
 
         log.info("client_id=" + self.app_config["client_id"])
         log.info("consumer_secret=" + self.app_config["consumer_secret"])
+        log.info("code=" + os.getenv("withings_code", ""))
         log.info("callback_url=" + self.app_config["callback_url"])
 
         req = requests.post(TOKEN_URL, params)
