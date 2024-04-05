@@ -65,7 +65,7 @@ class WithingsOAuth2:
         if USER_CONFIG: 
             self.user_cfg = WithingsConfig(USER_CONFIG)
             self.user_config = self.user_cfg.config
-        else
+        else:
             log.info("extract secrets from env variables")
             self.user_config["access_token"] = ACCESS_TOKEN
             self.user_config["refresh_token"] = REFRESH_TOKEN
