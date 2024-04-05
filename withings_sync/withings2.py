@@ -269,7 +269,7 @@ class WithingsAccount:
 
         measurements = req.json()
 
-        log.debug("Height response = " + measurements)
+        log.debug("Height response status = " + measurements.get("status"))
 
         if measurements.get("status") == 0:
             log.debug("Height received")
