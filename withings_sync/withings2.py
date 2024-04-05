@@ -63,7 +63,7 @@ class WithingsOAuth2:
         self.user_config = self.user_cfg.config
 
         if not self.user_config.get("access_token"):
-            if not self.user_config.get("authentification_code"):
+            if not os.getenv("withings_code", ""):
                 self.user_config[
                     "authentification_code"
                 ] = self.get_authenticationcode()
