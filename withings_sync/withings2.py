@@ -132,6 +132,10 @@ class WithingsOAuth2:
             "redirect_uri": self.app_config["callback_url"],
         }
 
+        log.info("client_id=" + self.app_config["client_id"])
+        log.info("consumer_secret=" + self.app_config["consumer_secret"])
+        log.info("callback_url=" + self.app_config["callback_url"])
+
         req = requests.post(TOKEN_URL, params)
         resp = req.json()
 
