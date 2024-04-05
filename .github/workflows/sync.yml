@@ -35,6 +35,6 @@ jobs:
 
       - name: Execute withings-sync
         env: 
-          withings_code: f03f3e5bbf4bf394c977a0a341497778efcafb05
+          withings_code: 03fb13c8c8ad1b575f31ad21732d69c15cc1201f
         run: withings-sync -f 2024-04-01 -v
     
