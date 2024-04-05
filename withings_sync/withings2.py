@@ -87,7 +87,7 @@ class WithingsOAuth2:
                 self.get_accesstoken()
 
 
-        self.refresh_accesstoken()
+        # self.refresh_accesstoken()
 
         # self.user_cfg.write()
 
