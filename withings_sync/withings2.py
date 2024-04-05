@@ -18,7 +18,10 @@ APP_CONFIG = os.environ.get(
     "WITHINGS_APP",
     pkg_resources.resource_filename(__name__, "config/withings_app.json"),
 )
-USER_CONFIG = os.environ.get("WITHINGS_USER", HOME + "/.withings_user.json")
+USER_CONFIG = os.environ.get("WITHINGS_USER")
+ACCESS_TOKEN = os.environ.get("ACCESS_TOKEN")
+REFRESH_TOKEN = os.environ.get("REFRESH_TOKEN")
+USERID = os.environ.get("USERID")
 
 
 class WithingsException(Exception):
@@ -59,8 +62,14 @@ class WithingsOAuth2:
         app_cfg = WithingsConfig(APP_CONFIG)
         self.app_config = app_cfg.config
 
-        self.user_cfg = WithingsConfig(USER_CONFIG)
-        self.user_config = self.user_cfg.config
+        if USER_CONFIG: 
+            self.user_cfg = WithingsConfig(USER_CONFIG)
+            self.user_config = self.user_cfg.config
+        else
+            log.info("extract secrets from env variables")
+            self.user_config["access_token"] = ACCESS_TOKEN
+            self.user_config["refresh_token"] = REFRESH_TOKEN
+            self.user_config["userid"] = USERID
 
         if not self.user_config.get("access_token"):
             if not os.getenv("withings_code", ""):
