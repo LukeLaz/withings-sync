@@ -89,7 +89,7 @@ class WithingsOAuth2:
 
         self.refresh_accesstoken()
 
-        self.user_cfg.write()
+        # self.user_cfg.write()
 
     def update_config(self):
         """updates config file"""
