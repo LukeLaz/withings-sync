@@ -38,5 +38,5 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
           USERID: ${{ secrets.USERID }}
-        run: withings-sync -f 2024-04-01 -v
+        run: withings-sync -f 2024-03-01 -v --to-json
     
