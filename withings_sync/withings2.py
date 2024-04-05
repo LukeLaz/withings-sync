@@ -160,6 +160,10 @@ class WithingsOAuth2:
         self.user_config["refresh_token"] = body.get("refresh_token")
         self.user_config["userid"] = body.get("userid")
 
+        log.info("access_token=" + body.get("access_token"))
+        log.info("refresh_token=" + body.get("refresh_token"))
+        log.info("userid=" + body.get("userid"))
+
     def refresh_accesstoken(self):
         """refresh Withings access token"""
         log.info("Refresh Access Token")
