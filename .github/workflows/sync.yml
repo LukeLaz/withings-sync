@@ -1,3 +1,8 @@
+# This workflow syncs from Withings to Garmin.
+# To sync from Garmin to Strava there is
+# https://www.weemple.com/weightnet/members
+#
+
 on:
   schedule:
     - cron:  '0 10 * * *'
