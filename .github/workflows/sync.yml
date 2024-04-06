@@ -40,5 +40,5 @@ jobs:
           USERID: ${{ secrets.USERID }}
           GARMIN_USERNAME: ${{ secrets.GARMIN_USERNAME }}
           GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
-        run: withings-sync -f 2024-03-01 -v --to-json
+        run: echo $(date +"%Y-%m-%d") && withings-sync -f $(date +"%Y-%m-%d") 2024-03-01 -v
     
