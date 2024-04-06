@@ -41,4 +41,12 @@ jobs:
           GARMIN_USERNAME: ${{ secrets.GARMIN_USERNAME }}
           GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
         run: withings-sync -f $(date +"%Y-%m-%d") -v
+
+      - name: Store updated refresh token
+        uses: hmanzur/actions-set-secret@v2.0.0
+        with:
+          name: 'REFRESH_TOKEN'
+          value: "$REFRESH_TOKEN"
+          repository: LukeLaz/withings-sync
+          token: ${{ secrets.GITHUB_TOKEN }}
     
