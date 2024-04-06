@@ -89,7 +89,9 @@ class WithingsOAuth2:
 
         self.refresh_accesstoken()
 
+        os.environ["REFRESH_TOKEN"] = self.user_config["refresh_token"]
         # self.user_cfg.write()
+    
 
     def update_config(self):
         """updates config file"""
